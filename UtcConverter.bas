@@ -212,7 +212,7 @@ Public Function ParseIso(utc_IsoString As String) As Date
 
                 Select Case UBound(utc_OffsetParts)
                 Case 0
-                    utc_Offset = TimeSerial(VBA.CInt(utc_OffsetParts(0)), 0, 0)
+                    utc_Offset = TimeSerial(VBA.CInt(Mid(utc_OffsetParts(0), 1, 2)), VBA.CInt(Mid(utc_OffsetParts(0), 3, 2)), 0)
                 Case 1
                     utc_Offset = TimeSerial(VBA.CInt(utc_OffsetParts(0)), VBA.CInt(utc_OffsetParts(1)), 0)
                 Case 2
